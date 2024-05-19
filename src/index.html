@@ -7,15 +7,17 @@
     <title>Folha Verde</title>
 </head>
 <body>
-    <header>
+    <div class="verde">
         <h1>Folha Verde</h1>
-    </header>
-    <nav>
-        <a href="index.html">Pagina Inicial</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="contato.html">Contato</a>
-        <a href="sobre.html">Sobre</a>
-    </nav>
+    </div>
+    <div id="navbar"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
     <div class="banner">
         <div>Grande foda-se</div>
     </div>

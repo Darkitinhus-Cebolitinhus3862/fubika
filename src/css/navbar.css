@@ -1,0 +1,31 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #3F4D34;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .item {
+    color: white;
+    margin: 0 45px;
+    text-decoration: none;
+    font-weight: bolder;
+    line-height: 1.5;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+}

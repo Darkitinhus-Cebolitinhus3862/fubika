@@ -5,22 +5,11 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-header {
+.verde {
     background-color: #527536;
     color: white;
     padding: 10px 0;
     text-align: center;
-}
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #3F4D34;
-    padding: 10px;
-}
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
 }
 .banner {
     background: url('banner.jpg') no-repeat center center;
