@@ -1,11 +1,14 @@
 # Instruções
+```
+# Clonar o repositório
+git clone https://github.com/Darkitinhus-Cebolitinhus3862/fubika.git
 
- - Baixar O VS Code
- - Instalar a extensão Live do VS Code
- - Clonar o repositório
- - Ir até o index.html e clicar em "Go live!" no canto inferior esquerdo de sua tela
- - Tudo pronto para navegar pela prototipação
+# Instalar as dependencias
+npm install
 
+# Executar o projeto
+npm start
+```
 # Trabalho por
 
 - Christian Kennedy Daniel Martins
