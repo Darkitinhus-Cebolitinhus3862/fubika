@@ -1,0 +1,16 @@
+{
+  "name": "fubika",
+  "version": "1.0.0",
+  "description": "- Baixar O VS Code\r  - Instalar a extensão Live do VS Code\r  - Clonar o repositório\r  - Ir até o index.html e clicar em \"Go live!\" no canto inferior esquerdo de sua tela\r  - Tudo pronto para navegar pela prototipação",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

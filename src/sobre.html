@@ -3,29 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>Folha Verde</title>
+    <link rel="stylesheet" href="css/contato.css">
+    <title>Sobre a Folha Verde</title>
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
 </head>
 <body>
     <div id="navbar"></div>
-    <script>
-        fetch('navbar.html')
+	<script>
+        fetch('./templates/navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
             });
-    </script>
-    <h1>Sobre</h1>
-
-    <footer id="footer"></footer>
-    <script>
-        fetch('footer.html')
+        fetch('./templates/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
             });
-    </script> 
+    </script>
+	
+    <div class="container">
+        <h1>Sobre a Folha Verde</h1>
+        <p>A Folha Verde é uma empresa dedicada a promover um estilo de vida saudável e sustentável através de produtos orgânicos e naturais.</p>
+        <p>Nossa missão é fornecer produtos de alta qualidade, cultivados de forma ética e responsável, visando o bem-estar de nossos clientes e do meio ambiente.</p>
+        <p>Estamos comprometidos em oferecer produtos frescos, livres de pesticidas e ingredientes artificiais, para que você possa desfrutar de uma alimentação mais saudável e nutritiva.</p>
+        <p>Entre em contato conosco para saber mais sobre nossos produtos e como podemos ajudá-lo a adotar um estilo de vida mais saudável.</p>
+    </div>
+   
+    <footer id="footer"></footer>
     
+    <script>
+        fetch('./templates/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('./templates/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

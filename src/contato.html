@@ -10,12 +10,18 @@
 <body>
     <div id="navbar"></div>
     <script>
-        fetch('navbar.html')
+        fetch('./templates/navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
             });
+        fetch('./templates/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
     </script>
+
     <div class="container">
         <h2>Fale conosco</h2>
         <form action="mailto:contato@folhaveverde.com" method="post" enctype="text/plain">
@@ -44,13 +50,6 @@
     </div>
    
     <footer id="footer"></footer>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-
+    
 </body>
 </html>
