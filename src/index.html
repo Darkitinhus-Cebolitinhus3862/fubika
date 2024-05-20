@@ -11,7 +11,12 @@
 <body>
     <div id="navbar"></div>
     <script>
-        fetch('navbar.html')
+        fetch('./templates/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('./templates/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
@@ -20,13 +25,13 @@
 
     <div class="slideshow-container">
         <div class="mySlides fade">
-            <img src="https://marvel-b1-cdn.bc0a.com/f00000000129784/bioadvanced.com/media/wysiwyg/live_media/2018-06/What_To_Plant_in_April.jpg" style="width: 1000px;">
+            <img src="https://marvel-b1-cdn.bc0a.com/f00000000129784/bioadvanced.com/media/wysiwyg/live_media/2018-06/What_To_Plant_in_April.jpg">
         </div>
         <div class="mySlides fade">
-            <img src="https://gingervalley.com/wp-content/uploads/2023/05/GCS_SeasonalWebsiteSliders-960x250_Spring2-960x250.png" style="width:100%">
+            <img src="https://gingervalley.com/wp-content/uploads/2023/05/GCS_SeasonalWebsiteSliders-960x250_Spring2-960x250.png">
         </div>
         <div class="mySlides fade">
-            <img src="https://www.marthastewart.com/thmb/Ik_0nQAgdMkn1kdWdeGZsTmqSJA=/1500x375/filters:no_upscale():max_bytes(200000):strip_icc()/container-garden-banner-0423-81262a2ea524428f98ebd973713e4e30.jpg" style="width:100%">
+            <img src="https://www.marthastewart.com/thmb/Ik_0nQAgdMkn1kdWdeGZsTmqSJA=/1500x375/filters:no_upscale():max_bytes(200000):strip_icc()/container-garden-banner-0423-81262a2ea524428f98ebd973713e4e30.jpg">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -42,23 +47,20 @@
         <h2>Nossos Produtos</h2>
         <div class="products">
             <div class="product">
-                <img>
                 <h3>Produto 1</h3>
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/024/859/837/small_2x/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.png">
                 <p>Descrição do Produto 1</p>
                 <p><strong>R$ 999,99</strong></p>
             </div>
             <div class="product">
-                <img>
                 <h3>Produto 2</h3>
-                <img src="https://pngimg.com/d/watering_can_PNG2.png" style="width: 400px;">
+                <img src="https://pngimg.com/d/watering_can_PNG2.png">
                 <p>Descrição do Produto 2</p>
                 <p><strong>R$ 999,99</strong></p>
             </div>
             <div class="product">
-                <img>
                 <h3>Produto 3</h3>
-                <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-burlap-sack-with-sunflower-seeds-grained-picture-image_13186680.png" style="height: 400px;">
+                <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-burlap-sack-with-sunflower-seeds-grained-picture-image_13186680.png">
                 <p>Descrição do Produto 3</p>
                 <p><strong>R$ 999,99</strong></p>
             </div>
@@ -91,7 +93,7 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
+            setTimeout(showSlides, 5000);
         }
 
         function plusSlides(n) {
