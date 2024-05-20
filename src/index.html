@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
+    <link href='https://fonts.googleapis.com/css?family=Agbalumo' rel='stylesheet'>
     <title>Folha Verde</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/628/628283.png" type="image/x-icon"/>
 </head>
 <body>
     <div id="navbar"></div>
@@ -16,9 +17,27 @@
                 document.getElementById('navbar').innerHTML = data;
             });
     </script>
-    <div class="banner">
-        <div>Grande foda-se</div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://marvel-b1-cdn.bc0a.com/f00000000129784/bioadvanced.com/media/wysiwyg/live_media/2018-06/What_To_Plant_in_April.jpg" style="width: 1000px;">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://gingervalley.com/wp-content/uploads/2023/05/GCS_SeasonalWebsiteSliders-960x250_Spring2-960x250.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="https://www.marthastewart.com/thmb/Ik_0nQAgdMkn1kdWdeGZsTmqSJA=/1500x375/filters:no_upscale():max_bytes(200000):strip_icc()/container-garden-banner-0423-81262a2ea524428f98ebd973713e4e30.jpg" style="width:100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
     <div class="container">
         <h2>Nossos Produtos</h2>
         <div class="products">
@@ -32,19 +51,63 @@
             <div class="product">
                 <img>
                 <h3>Produto 2</h3>
-                <img src="https://pngimg.com/d/watering_can_PNG2.png" style="width: 400;">
+                <img src="https://pngimg.com/d/watering_can_PNG2.png" style="width: 400px;">
                 <p>Descrição do Produto 2</p>
                 <p><strong>R$ 999,99</strong></p>
             </div>
             <div class="product">
                 <img>
                 <h3>Produto 3</h3>
-                <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-burlap-sack-with-sunflower-seeds-grained-picture-image_13186680.png" style="height: 400;">
+                <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-burlap-sack-with-sunflower-seeds-grained-picture-image_13186680.png" style="height: 400px;">
                 <p>Descrição do Produto 3</p>
                 <p><strong>R$ 999,99</strong></p>
             </div>
         </div>
     </div>
+
+    <footer id="footer"></footer>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex < 1) {
+                slideIndex = document.getElementsByClassName("mySlides").length;
+            } else if (slideIndex > document.getElementsByClassName("mySlides").length) {
+                slideIndex = 1;
+            }
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+    </script>
 </body>
 </html>
-

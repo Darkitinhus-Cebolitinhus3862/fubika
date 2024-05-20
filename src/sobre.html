@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="">
     <title>Folha Verde</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/628/628283.png" type="image/x-icon"/>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
 </head>
 <body>
     <div id="navbar"></div>
@@ -17,6 +17,15 @@
             });
     </script>
     <h1>Sobre</h1>
+
+    <footer id="footer"></footer>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script> 
     
 </body>
 </html>
