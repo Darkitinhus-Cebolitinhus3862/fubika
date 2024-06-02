@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +9,11 @@
     <link href='https://fonts.googleapis.com/css?family=Agbalumo' rel='stylesheet'>
 </head>
 <body>
-    <div class="verde">
+    <div class="verde" id="header">
         <h1>Folha  Verde</h1>
         <img src="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" style="width:150px;">
     </div>
-    <nav>
+    <nav id="navbar">
         <ul>
             <li><a class="item" href="index.html">Página Inicial</a></li>
             <li><a class="item" href="produtos.html">Produtos</a></li>
@@ -19,4 +21,17 @@
             <li><a class="item" href="sobre.html">Sobre</a></li>
         </ul>
     </nav>
+    <script>
+        window.onscroll = function() {
+            var header = document.querySelector(".verde");
+            if (window.pageYOffset > header.offsetHeight) {
+                header.classList.add("hidden");
+            } else {
+                header.classList.remove("hidden");
+            }
+        };
+        
+          
+    </script>
 </body>
+</html>

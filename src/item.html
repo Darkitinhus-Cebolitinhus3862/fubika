@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/item.css">
+    <title>Detalhes do Produto</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        fetch('./templates/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('./templates/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+    
+    <div class="container">
+        <h2 id="product-name"></h2>
+        <img id="product-img" src="" alt="Produto">
+        <p id="product-desc"></p>
+        <p><strong id="product-price"></strong></p>
+        <button class="buy-button">Comprar</button>
+    </div>
+    <div id="footer"></div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const desc = params.get('desc');
+        const price = params.get('price');
+        const img = params.get('img');
+
+        document.getElementById('product-name').innerText = name;
+        document.getElementById('product-desc').innerText = desc;
+        document.getElementById('product-price').innerText = `R$ ${price}`;
+        document.getElementById('product-img').src = img;
+    </script>
+</body>
+</html>
