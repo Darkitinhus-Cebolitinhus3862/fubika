@@ -44,28 +44,19 @@
     </div>
     <div class="container">
         <h2 class="titulo">Nossos Produtos</h2>
-        <div class="products">
-            <div class="product" onclick="location.href='item.html?name=Produto%201&desc=Descrição%20do%20Produto%201&price=999,99&img=https://static.vecteezy.com/system/resources/thumbnails/024/859/837/small_2x/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.png'">
-                <h3>Produto 1</h3>
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/024/859/837/small_2x/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.png">
-                <p>Descrição do Produto 1</p>
-                <p><strong>R$ 999,99</strong></p>
-            </div>
-            <div class="product" onclick="location.href='item.html?name=Produto%202&desc=Descrição%20do%20Produto%202&price=999,99&img=https://pngimg.com/d/watering_can_PNG2.png'">
-                <h3>Produto 2</h3>
-                <img src="https://pngimg.com/d/watering_can_PNG2.png">
-                <p>Descrição do Produto 2</p>
-                <p><strong>R$ 999,99</strong></p>
-            </div>
-            <div class="product" onclick="location.href='item.html?name=Produto%203&desc=Descrição%20do%20Produto%203&price=999,99&img=https://png.pngtree.com/png-clipart/20231020/original/pngtree-burlap-sack-with-sunflower-seeds-grained-picture-image_13186680.png'">
-                <h3>Produto 3</h3>
-                <img src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-burlap-sack-with-sunflower-seeds-grained-picture-image_13186680.png">
-                <p>Descrição do Produto 3</p>
-                <p><strong>R$ 999,99</strong></p>
-            </div>
-        </div>
+		<div class="products" id="products" style="display:none"></div>
+		<div class="products" id="products6" style="display:none"></div>
+        <div class="products" id="products3"></div>
+		
+		<div class="pagination">
+			<a class="btn" id="checkoutButton">Finalizar Compra</a>
+			<a href="produtos_page2.html" class="next-page">Próxima Página ❯</a>
+		</div>
     </div>
     <div id="footer"></div>
+	
+	
+    <script src="js/carrinho.js"></script>
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);

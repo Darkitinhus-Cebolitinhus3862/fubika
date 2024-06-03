@@ -24,62 +24,20 @@
 
     <h1 class="titulo">Produtos</h1>
     <div class="container">
-        <div class="products">
-            <div class="product">
-                <a href="item.html?name=Produto1&desc=Descrição%20do%20Produto%201&price=999.99&img=https://images.tcdn.com.br/img/img_prod/1036362/pedra_quartzo_rolado_5kg_west_garden_1935_1_bb01d6ab567d95276e0ac644cab637ca.jpg">
-                    <h3>Produto 1</h3>
-                    <img src="https://images.tcdn.com.br/img/img_prod/1036362/pedra_quartzo_rolado_5kg_west_garden_1935_1_bb01d6ab567d95276e0ac644cab637ca.jpg" alt="Produto 1">
-                    <p>Descrição do Produto 1</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto2&desc=Descrição%20do%20Produto%202&price=999.99&img=https://agropecuariacampinense.com.br/wp-content/uploads/2022/06/Colhedor-de-Frutas-Tramontina.png">
-                    <h3>Produto 2</h3>
-                    <img src="https://agropecuariacampinense.com.br/wp-content/uploads/2022/06/Colhedor-de-Frutas-Tramontina.png" alt="Produto 2">
-                    <p>Descrição do Produto 2</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto3&desc=Descrição%20do%20Produto%203&price=999.99&img=https://http2.mlstatic.com/D_963966-MLB42478498517_072020-C.jpg">
-                    <h3>Produto 3</h3>
-                    <img src="https://http2.mlstatic.com/D_963966-MLB42478498517_072020-C.jpg" alt="Produto 3">
-                    <p>Descrição do Produto 3</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto4&desc=Descrição%20do%20Produto%204&price=999.99&img=https://www.lizotferragens.com.br/_uploads/ProdutoDestaque/ProdutoDestaque_5837_orig.png">
-                    <h3>Produto 4</h3>
-                    <img src="https://www.lizotferragens.com.br/_uploads/ProdutoDestaque/ProdutoDestaque_5837_orig.png" alt="Produto 4">
-                    <p>Descrição do Produto 4</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto5&desc=Descrição%20do%20Produto%205&price=999.99&img=https://www.terradecultivo.com.br/wp-content/uploads/2020/05/LINHA-01.png">
-                    <h3>Produto 5</h3>
-                    <img src="https://www.terradecultivo.com.br/wp-content/uploads/2020/05/LINHA-01.png" alt="Produto 5">
-                    <p>Descrição do Produto 5</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto6&desc=Descrição%20do%20Produto%206&price=999.99&img=https://www.verdegarden.com.br/upload/produto/imagem/b_ae8cbbf674ec1509dc7a2f0c51fbc010.jpeg">
-                    <h3>Produto 6</h3>
-                    <img src="https://www.verdegarden.com.br/upload/produto/imagem/b_ae8cbbf674ec1509dc7a2f0c51fbc010.jpeg" alt="Produto 6">
-                    <p>Descrição do Produto 6</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
+        <div class="products" id="products6">
+            <!-- Produtos são carregados aqui -->
         </div>
+		<div class="products" id="products" style="display:none"></div>
+		<div class="products" id="products3" style="display:none"></div>
     </div>
 
     <div class="pagination">
-        <a href="produtos.html" class="previous-page">❮ Página Anterior</a>
+		<a class="btn" id="checkoutButton">Finalizar Compra</a>
+        <a href="produtos_page2.html" class="next-page">Próxima Página ❯</a>
     </div>
 
     <footer id="footer"></footer>
+    
+    <script src="js/carrinho.js"></script>
 </body>
 </html>
