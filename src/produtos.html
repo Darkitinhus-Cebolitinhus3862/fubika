@@ -24,62 +24,23 @@
 
     <h1 class="titulo">Produtos</h1>
     <div class="container">
-        <div class="products">
-            <div class="product">
-                <a href="item.html?name=Produto1&desc=Descrição%20do%20Produto%201&price=999.99&img=https://png.pngtree.com/png-clipart/20240206/original/pngtree-sack-with-dry-chickpeas-and-scoop-seed-photo-png-image_14248998.png">
-                    <h3>Produto 1</h3>
-                    <img src="https://png.pngtree.com/png-clipart/20240206/original/pngtree-sack-with-dry-chickpeas-and-scoop-seed-photo-png-image_14248998.png" alt="Produto 1">
-                    <p>Descrição do Produto 1</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto2&desc=Descrição%20do%20Produto%202&price=999.99&img=https://png.pngtree.com/png-clipart/20240222/original/pngtree-gardening-tool-cultivate-photo-png-image_14386525.png">
-                    <h3>Produto 2</h3>
-                    <img src="https://png.pngtree.com/png-clipart/20240222/original/pngtree-gardening-tool-cultivate-photo-png-image_14386525.png" alt="Produto 2">
-                    <p>Descrição do Produto 2</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto3&desc=Descrição%20do%20Produto%203&price=999.99&img=https://static.vecteezy.com/system/resources/previews/011/016/148/non_2x/succulent-plant-in-a-pot-isolated-free-png.png">
-                    <h3>Produto 3</h3>
-                    <img src="https://static.vecteezy.com/system/resources/previews/011/016/148/non_2x/succulent-plant-in-a-pot-isolated-free-png.png" alt="Produto 3">
-                    <p>Descrição do Produto 3</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto4&desc=Descrição%20do%20Produto%204&price=999.99&img=https://esterni.ind.br/site/wp-content/uploads/2022/11/Adhara-Floreira-1024x470.png">
-                    <h3>Produto 4</h3>
-                    <img src="https://esterni.ind.br/site/wp-content/uploads/2022/11/Adhara-Floreira-1024x470.png" alt="Produto 4">
-                    <p>Descrição do Produto 4</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto5&desc=Descrição%20do%20Produto%205&price=999.99&img=https://lisaflora.com.br/wp-content/uploads/2017/06/Floreira.png">
-                    <h3>Produto 5</h3>
-                    <img src="https://lisaflora.com.br/wp-content/uploads/2017/06/Floreira.png" alt="Produto 5">
-                    <p>Descrição do Produto 5</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="item.html?name=Produto6&desc=Descrição%20do%20Produto%206&price=999.99&img=https://images.tcdn.com.br/img/img_prod/1036362/orquideas_e_flores_pronto_uso_nutricao_premium_west_garden_500ml_1296_1_d7f32fc9c2872a3196de4dde625c91b1.jpg">
-                    <h3>Produto 6</h3>
-                    <img src="https://images.tcdn.com.br/img/img_prod/1036362/orquideas_e_flores_pronto_uso_nutricao_premium_west_garden_500ml_1296_1_d7f32fc9c2872a3196de4dde625c91b1.jpg" alt="Produto 6">
-                    <p>Descrição do Produto 6</p>
-                    <p><strong>R$ 999,99</strong></p>
-                </a>
-            </div>
+        <div class="products" id="products">
+            <!-- Produtos são carregados aqui -->
         </div>
     </div>
 
     <div class="pagination">
+		<a class="btn" id="checkoutButton">Finalizar Compra</a>
         <a href="produtos_page2.html" class="next-page">Próxima Página ❯</a>
     </div>
+	
+	<div id="qrcode">
+	  <textarea type="text" id="pix-code" readonly></textarea>
+	  <button id="copy-pix-code">Copiar código PIX</button>
+	</div>
 
     <footer id="footer"></footer>
+    
+    <script src="js/carrinho.js"></script>
 </body>
 </html>

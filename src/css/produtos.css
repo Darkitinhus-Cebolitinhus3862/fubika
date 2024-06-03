@@ -56,7 +56,7 @@ body {
 }
 
 .pagination .next-page,
-.pagination .previous-page {
+.pagination .previous-page, .btn {
     text-decoration: none;
     background-color: #527536;
     color: white;
@@ -68,6 +68,6 @@ body {
 }
 
 .pagination .next-page:hover,
-.pagination .previous-page:hover {
+.pagination .previous-page:hover, .btn:hover {
     background-color: #435c2e;
 }
