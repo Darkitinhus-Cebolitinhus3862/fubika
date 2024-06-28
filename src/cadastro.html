@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contato.css">
+    <title>Folha Verde</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: auto;
+            padding: 10px 20px;
+        }
+        .horizontal-line {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row .form-group {
+            flex: 1;
+        }
+        .radio-group {
+            display: ruby;
+            flex-direction: column;
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .radio-option input {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00');
+            $('#rg').mask('00.000.000-0');
+            $('#telefone').mask('(00) 00000-0000');
+            $('#telefone-fixo').mask('(00) 0000-0000');
+            $('#cep').mask('00000-000');
+
+            $('#pesquisar-cep').click(function() {
+                var cep = $('#cep').val().replace(/\D/g, '');
+                if (cep != "") {
+                    var validacep = /^[0-9]{8}$/;
+                    if(validacep.test(cep)) {
+                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                            if (!("erro" in dados)) {
+                                $("#logradouro").val(dados.logradouro);
+                                $("#bairro").val(dados.bairro);
+                                $("#municipio").val(dados.localidade);
+                                $("#uf").val(dados.uf);
+                            } else {
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    } else {
+                        alert("Formato de CEP inválido.");
+                    }
+                } else {
+                    alert("Por favor, insira um CEP.");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        fetch('./templates/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('./templates/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <div class="container">
+        <h2 class="titulo">Cadastro</h2>
+        <form action="mailto:contato@folhaveverde.com" method="post" enctype="text/plain" class="contact-form">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+            </div>
+            <div class="form-group">
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg" required>
+            </div>
+            <div class="form-group">
+                <label>Estado Civil:</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="solteiro" name="estado-civil" value="solteiro" required>
+                        <label for="solteiro">Solteiro</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="casado" name="estado-civil" value="casado">
+                        <label for="casado">Casado</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="divorciado" name="estado-civil" value="divorciado">
+                        <label for="divorciado">Divorciado</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="viuvo" name="estado-civil" value="viuvo">
+                        <label for="viuvo">Viúvo</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="horizontal-line">
+            
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <div class="row">
+                    <input type="text" id="cep" name="cep" required>
+                    <button type="button" id="pesquisar-cep">Pesquisar</button>
+                </div>
+            </div>
+            <div class="form-group">
+				<div class="row">
+					<label style="width:50%" for="municipio">Município:</label>
+					<label style="width:50%" for="uf">UF:</label>
+				</div>
+				<div class="row">
+					<input type="text" id="municipio" name="municipio" required>
+					<input type="text" id="uf" name="uf" required>
+				</div>
+            </div>
+            <div class="form-group">
+				<div class="row">
+					<label style="width:75%" for="logradouro">Logradouro:</label>
+					<label style="width:25%" for="numero">Número:</label>
+				</div>
+				<div class="row">
+					<input style="width:75%" type="text" id="numero" name="numero" required>
+					<input style="width:25%" type="text" id="logradouro" name="logradouro" required>
+				</div>
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+            </div>
+            <div class="form-group">
+                <label for="complemento">Complemento:</label>
+                <input type="text" id="complemento" name="complemento">
+            </div>
+
+            <hr class="horizontal-line">
+
+            <div class="form-group">
+				<div class="row">
+					<label style="width: 25%" for="telefone">DDD:</label>
+					<label style="width: 75%" for="telefone">Telefone:</label>
+				</div>
+				<div class="row">
+					<input style="width: 25%" type="text" required>
+					<input style="width: 75%" type="text" id="telefone" name="telefone" required>
+				</div>
+            </div>
+            <div class="form-group">
+				<div class="row">
+					<label style="width: 25%" for="telefone">DDD:</label>
+					<label style="width: 75%" for="telefone">Telefone fixo:</label>
+				</div>
+				<div class="row">
+					<input style="width: 25%" type="text" required>
+					<input style="width: 75%" type="text" id="telefone-fixo" name="telefone-fixo" required>
+				</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="repita-email">Repita o Email:</label>
+                <input type="email" id="repita-email" name="repita-email" required>
+            </div>
+
+            <hr class="horizontal-line">
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmar-senha">Confirmar Senha:</label>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+   
+    <footer id="footer"></footer>
+    
+</body>
+</html>
