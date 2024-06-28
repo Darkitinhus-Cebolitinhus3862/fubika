@@ -21,6 +21,11 @@ body {
 	width: auto;
 }
 
+.vl {
+	border-left: 2px solid white;
+	height: auto;
+}
+
 #cart-table {
 	border: black solid 1px;
 	width: 100%;

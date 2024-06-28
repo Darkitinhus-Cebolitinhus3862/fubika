@@ -9,6 +9,18 @@
     <link href='https://fonts.googleapis.com/css?family=Agbalumo' rel='stylesheet'>
 </head>
 <body>
+
+    <script>		
+        window.onscroll = function() {
+            var header = document.querySelector(".verde");
+            if (window.pageYOffset > header.offsetHeight) {
+                header.classList.add("hidden");
+            } else {
+                header.classList.remove("hidden");
+            }
+        };
+    </script>
+	
     <div class="verde" id="header">
         <h1>Folha  Verde</h1>
         <img src="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" style="width:150px;">
@@ -21,18 +33,24 @@
             <li><a class="item" href="sobre.html">Sobre</a></li>
             <li><a class="item" href="carrinho.html">Carrinho</a></li>
         </ul>
-    </nav>
-    <script>
-        window.onscroll = function() {
-            var header = document.querySelector(".verde");
-            if (window.pageYOffset > header.offsetHeight) {
-                header.classList.add("hidden");
-            } else {
-                header.classList.remove("hidden");
-            }
-        };
-        
-          
-    </script>
+		<div class="vl"></div>
+		<ul class="cad-log">
+		   <li><a class="item" href="cadastro.html">Cadastrar-se</a></li>
+		   <li><button class="login-button" onclick="toggleLoginModal()">Login</button></li>
+		</ul>
+	</nav> 
+	<div id="loginModal" class="modal">
+	  <div class="modal-content">
+		<span class="close" onclick="closeLoginModal()">&times;</span>
+		<h2>Login</h2>
+		<form>
+		  <label for="email">Email:</label>
+		  <input type="email" id="email" name="email" required>
+		  <label for="password">Senha:</label>
+		  <input type="password" id="password" name="password" required>
+		  <button type="submit" class="login-button">Entrar</button>
+		</form>
+	  </div>
+	</div>
 </body>
 </html>

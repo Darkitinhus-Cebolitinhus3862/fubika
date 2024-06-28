@@ -1,3 +1,11 @@
+let modalVisible = false; // Variável booleana
+
+function toggleLoginModal() {
+	const modal = document.getElementById("loginModal");
+	modalVisible = !modalVisible; // Inverte o valor do booleano
+	modal.style.display = modalVisible ? "block" : "none"; // Alterna entre 'block' e 'none'
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const productsElement = document.getElementById('products');
     const products3Element = document.getElementById('products3');
