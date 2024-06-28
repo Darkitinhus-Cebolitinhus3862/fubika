@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
+    <link href='https://fonts.googleapis.com/css?family=Agbalumo' rel='stylesheet'>
+    <title>Folha Verde - Carrinho</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <script>
+        fetch('./templates/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('./templates/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <div class="products" id="products" style="display:none"></div>
+    <div class="products" id="products6" style="display:none"></div>
+    <div class="products" id="products3" style="display:none"></div>  
+    
+    <h2 class="titulo">Itens do Carrinho</h2>
+	<div class="mx-auto">
+		<table id="cart-table">
+			<thead>
+				<tr>
+					<th>Produto</th>
+					<th>Preço</th>
+					<th>Quantidade</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody id="cart-items">
+			</tbody>
+		</table>
+
+		<form id="payment-form">
+			<h3>Escolha a forma de pagamento:</h3>
+			<input type="radio" id="pix" name="payment" value="pix">
+			<label for="pix">Pix</label><br>
+			<input type="radio" id="cartao" name="payment" value="cartao">
+			<label for="cartao">Cartão</label><br>
+			<input type="radio" id="boleto" name="payment" value="boleto">
+			<label for="boleto">Boleto</label><br>
+		</form>
+	</div>
+
+    <div class="container">
+        <div class="pagination">
+            <a class="btn" id="checkoutButton">Finalizar Compra</a>
+            <a href="produtos_page2.html" class="next-page">Próxima Página ❯</a>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <script src="js/carrinho.js"></script>
+</body>
+</html>
