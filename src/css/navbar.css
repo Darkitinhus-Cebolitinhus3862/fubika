@@ -1,3 +1,8 @@
+body{
+    background-color:rgb(237, 248, 238);
+}
+
+
 body, ul {
     margin: 0;
     padding: 0;
@@ -8,7 +13,7 @@ nav {
     display: flex;
     justify-content: center;
     background-color: #479727dc;
-    padding: 10px 0;
+    padding: 4px 0;
     position: relative;
     top: 0;
     z-index: 1000;
@@ -19,15 +24,18 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    width: 100%;
 }
 
 nav .item {
     color: white;
-    margin: 0 45px;
+    margin: 0 20px;
     text-decoration: none;
     font-weight: bolder;
     line-height: 1.5;
     white-space: nowrap;
+    flex-grow: 0; 
 }
 
 a.item:hover {
@@ -37,6 +45,7 @@ a.item:hover {
 nav li {
     display: flex;
     align-items: center;
+    flex-grow: 0; 
 }
 
 .navigation-list {
@@ -45,11 +54,14 @@ nav li {
 
 .separador {
     border-left: 2px solid white;
-	height: auto;
+    padding-right: 5%;
+    height: auto;
+    margin: 0 10px;
 }
 
 .cad-log {
-    padding-left: 5%;
+    padding-left: 10%;
+    margin-left: 0px;
 }
 
 .verde {
@@ -76,7 +88,7 @@ nav li {
 }
 
 .login-button {
-    background-color: #4c9230;
+    background-color: #527536;
     line-height: 1.5;
     color: white;
     font-size: 15px;
@@ -86,29 +98,30 @@ nav li {
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
+    flex-grow: 0; 
+    margin: 0 20px;
 }
 
 .login-button:hover {
     background-color: #3a6e23;
 }
 
-\\\\\\\\\\\\
 .pagination {
-	text-align: center;
-	margin-top: 40px; 
-	margin-bottom: 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
-	
+
 .btn {
-	background-color: #527536;
-	color: white;
-	padding: 10px 20px;
-	border-radius: 5px;
-	margin: 5px; 
-	border: #435c2e;
+    background-color: #527536;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    border: #435c2e;
 }
 
 .btn:hover {
     background-color: #435c2e;
-	cursor: pointer;
+    cursor: pointer;
 }
