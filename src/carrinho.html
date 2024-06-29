@@ -29,8 +29,9 @@
     
     <h2 class="titulo">Itens do Carrinho</h2>
 	<div class="mx-auto">
+        <div class="tabelinha">
 		<table id="cart-table">
-			<thead>
+			<thead class="tabelinha-titulo">
 				<tr>
 					<th>Produto</th>
 					<th>Preço</th>
@@ -41,7 +42,8 @@
 			<tbody id="cart-items">
 			</tbody>
 		</table>
-
+    </div>
+    <div class="pagamento">
 		<form id="payment-form">
 			<h3>Escolha a forma de pagamento:</h3>
 			<input type="radio" id="pix" name="payment" value="pix">
@@ -51,7 +53,8 @@
 			<input type="radio" id="boleto" name="payment" value="boleto">
 			<label for="boleto">Boleto</label><br>
 		</form>
-	</div>
+    </div>
+    </div>
 
     <div class="container">
         <div class="pagination">
