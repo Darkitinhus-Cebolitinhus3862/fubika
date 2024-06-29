@@ -12,7 +12,8 @@ body, ul {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #479727dc;
+    /* background-color: #479727dc ; */
+    background-color: darkkhaki;
     padding: 4px 0;
     position: relative;
     top: 0;
@@ -33,7 +34,8 @@ nav ul {
 }
 
 nav .item {
-    color: white;
+    /* color: white; */
+    color: rgb(43, 53, 25);
     margin: 0 20px;
     text-decoration: none;
     font-weight: bolder;
@@ -43,7 +45,10 @@ nav .item {
 }
 
 a.item:hover {
-    color:rgb(60, 128, 168);
+    color: rgb(240, 236, 190);
+    background-color:darkolivegreen;
+    padding: 9px;
+    border-radius: 10px;
 }
 
 nav li {
@@ -53,11 +58,13 @@ nav li {
 }
 
 .navigation-list {
-    padding-right: 10%;
+    padding-left: 20px;
+    display: flex;
+    justify-content: left;
 }
 
 .separador {
-    border-left: 2px solid white;
+    border-left: 2px solid rgb(43, 53, 25);;
     height: auto;
     margin: 0 10px;
 }
@@ -68,7 +75,8 @@ nav li {
 }
 
 .verde {
-    background-color: #527536;
+    /* background-color: #527536; */
+    background-color: darkolivegreen;
     color: white;
     padding: 10px 0;
     font-family: Agbalumo;
@@ -106,8 +114,10 @@ nav li {
 }
 
 .login-button:hover {
-    background-color:rgb(237, 248, 238);
-    color: #527536;
+    background-color:rgb(140, 189, 125);
+    color: black;
+    padding: 8px 18px;
+    border: 2px solid darkolivegreen;
 }
 
 .pagination {
