@@ -7,7 +7,7 @@ body, ul {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #3F4D34;
+    background-color: #479727dc;
     padding: 10px 0;
     position: relative;
     top: 0;
@@ -27,6 +27,11 @@ nav .item {
     text-decoration: none;
     font-weight: bolder;
     line-height: 1.5;
+    white-space: nowrap;
+}
+
+a.item:hover {
+    color:rgb(60, 128, 168);
 }
 
 nav li {
@@ -34,8 +39,13 @@ nav li {
     align-items: center;
 }
 
-.navigation-list{
+.navigation-list {
     padding-right: 10%;
+}
+
+.separador {
+    border-left: 2px solid white;
+	height: auto;
 }
 
 .cad-log {
@@ -60,9 +70,9 @@ nav li {
 }
 
 @media only screen and (max-width: 300px) {
-	.prev, .next,.text {
-		font-size: 11px
-	}
+    .prev, .next, .text {
+        font-size: 11px;
+    }
 }
 
 .login-button {
