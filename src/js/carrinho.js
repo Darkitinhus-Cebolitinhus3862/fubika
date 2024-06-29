@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${product.img}" alt="${product.name}">
                 <p>${product.desc}</p>
                 <p><strong>R$ ${product.price.toFixed(2)}</strong></p>
-                <a class="btn" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</a>
+                <button class="btn" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</button>
             `;
             if (index < 6 && index < 11) {
                 productsElement.appendChild(productDiv);

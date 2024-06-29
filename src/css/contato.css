@@ -45,23 +45,15 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    box-sizing: border-box; /* Garantir que padding seja incluído na largura total */
+    box-sizing: border-box; 
 }
 
-.enviar {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px; /* Aumentei o tamanho da fonte para melhor visibilidade */
-    cursor: pointer;
-    box-sizing: border-box; /* Garantir que padding seja incluído na largura total */
+.container .btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-button:hover {
-    background-color: #45a049;
-}
 
 @media only screen and (max-width: 300px) {
 	.prev, .next,.text {
