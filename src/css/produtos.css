@@ -134,18 +134,4 @@ close:hover, .close:focus {
 	border: 1px solid #ccc; 
 	border-radius: 4px; 
 	box-sizing: border-box; 
-} 
-
-.modal-content .login-button { 
-	background-color: #4CAF50; 
-	color: white; 
-	border: none; 
-	padding: 10px; 
-	width: 100%; 
-	border-radius: 4px; 
-	cursor: pointer; 
-} 
-
-.modal-content .login-button:hover {
-	background-color: #45a049; 
 }

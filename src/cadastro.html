@@ -3,58 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="css/contato.css">
     <title>Folha Verde</title>
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <style>
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select, button, textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        button {
-            width: auto;
-            padding: 10px 20px;
-        }
-        .horizontal-line {
-            margin: 20px 0;
-            border: 0;
-            border-top: 1px solid #ccc;
-        }
-        .row {
-            display: flex;
-            gap: 10px;
-        }
-        .row .form-group {
-            flex: 1;
-        }
-        .radio-group {
-            display: ruby;
-            flex-direction: column;
-        }
-        .radio-option {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .radio-option input {
-            margin-right: 10px;
-        }
-    </style>
     <script>
         $(document).ready(function(){
             $('#cpf').mask('000.000.000-00');
@@ -126,35 +80,12 @@
                 <label for="rg">RG:</label>
                 <input type="text" id="rg" name="rg" required>
             </div>
-            <div class="form-group">
-                <label>Estado Civil:</label>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" id="solteiro" name="estado-civil" value="solteiro" required>
-                        <label for="solteiro">Solteiro</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="casado" name="estado-civil" value="casado">
-                        <label for="casado">Casado</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="divorciado" name="estado-civil" value="divorciado">
-                        <label for="divorciado">Divorciado</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="viuvo" name="estado-civil" value="viuvo">
-                        <label for="viuvo">Viúvo</label>
-                    </div>
-                </div>
-            </div>
-
             <hr class="horizontal-line">
-            
             <div class="form-group">
                 <label for="cep">CEP:</label>
                 <div class="row">
                     <input type="text" id="cep" name="cep" required>
-                    <button type="button" id="pesquisar-cep">Pesquisar</button>
+                    <button class="cadbutton" type="button" id="pesquisar-cep">Pesquisar</button>
                 </div>
             </div>
             <div class="form-group">
@@ -169,8 +100,7 @@
             </div>
             <div class="form-group">
 				<div class="row">
-					<label style="width:75%" for="logradouro">Logradouro:</label>
-					<label style="width:25%" for="numero">Número:</label>
+					<label style="width:100%" for="numero">Número:</label>
 				</div>
 				<div class="row">
 					<input style="width:75%" type="text" id="logradouro" name="logradouro" required>
@@ -199,22 +129,8 @@
 				</div>
             </div>
             <div class="form-group">
-				<div class="row">
-					<label style="width: 25%" for="telefone">DDD:</label>
-					<label style="width: 75%" for="telefone">Telefone fixo:</label>
-				</div>
-				<div class="row">
-					<input style="width: 25%" type="text" required>
-					<input style="width: 75%" type="text" id="telefone-fixo" name="telefone-fixo" required>
-				</div>
-            </div>
-            <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="repita-email">Repita o Email:</label>
-                <input type="email" id="repita-email" name="repita-email" required>
             </div>
 
             <hr class="horizontal-line">
@@ -227,11 +143,13 @@
                 <label for="confirmar-senha">Confirmar Senha:</label>
                 <input type="password" id="confirmar-senha" name="confirmar-senha" required>
             </div>
-            <button type="submit">Enviar</button>
+            <button class="cadbuton" type="submit">Enviar</button>
         </form>
     </div>
    
     <footer id="footer"></footer>
     
+    <script src="./js/login.js"></script>
+
 </body>
 </html>

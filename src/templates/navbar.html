@@ -4,53 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rek="stylesheet" href="css/login.css">
     <title>Folha Verde</title>
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
     <link href='https://fonts.googleapis.com/css?family=Agbalumo' rel='stylesheet'>
 </head>
 <body>
-
-    <script>		
-        window.onscroll = function() {
-            var header = document.querySelector(".verde");
-            if (window.pageYOffset > header.offsetHeight) {
-                header.classList.add("hidden");
-            } else {
-                header.classList.remove("hidden");
-            }
-        };
-    </script>
-	
     <div class="verde" id="header">
         <h1>Folha  Verde</h1>
         <img src="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" style="width:150px;">
     </div>
     <nav id="navbar">
-        <ul>
+        <ul class="navigation-list">
             <li><a class="item" href="index.html">Página Inicial</a></li>
             <li><a class="item" href="produtos.html">Produtos</a></li>
             <li><a class="item" href="contato.html">Contato</a></li>
             <li><a class="item" href="sobre.html">Sobre</a></li>
             <li><a class="item" href="carrinho.html">Carrinho</a></li>
         </ul>
-		<div class="vl"></div>
+		
 		<ul class="cad-log">
 		   <li><a class="item" href="cadastro.html">Cadastrar-se</a></li>
-		   <li><button class="login-button" onclick="toggleLoginModal()">Login</button></li>
+		   <li><button class="login-button" onclick="openLoginModal()">Login</button></li>
 		</ul>
 	</nav> 
-	<div id="loginModal" class="modal">
-	  <div class="modal-content">
-		<span class="close" onclick="toggleLoginModal()">&times;</span>
-		<h2>Login</h2>
-		<form>
-		  <label for="email">Email:</label>
-		  <input type="email" id="email" name="email" required>
-		  <label for="password">Senha:</label>
-		  <input type="password" id="password" name="password" required>
-		  <button type="submit" class="login-button">Entrar</button>
-		</form>
-	  </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="login-button">Entrar</button>
+            </form>
+        </div>
+    </div>
 	</div>
+
+    <script src="./js/login.js"></script>
+
 </body>
 </html>

@@ -8,7 +8,8 @@
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/152/540/non_2x/leaf-graphic-clipart-design-free-png.png" type="image/x-icon"/>
 </head>
 <body>
-    <div id="navbar"></div>
+
+    
 	<script>
         fetch('./templates/navbar.html')
             .then(response => response.text())
@@ -21,6 +22,8 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
+
+    <div id="navbar"></div>
 	
     <div class="container">
         <h1 class="titulo">Sobre a Folha Verde</h1>
@@ -31,18 +34,8 @@
     </div>
    
     <footer id="footer"></footer>
-    
-    <script>
-        fetch('./templates/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
-        fetch('./templates/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
+
+    <script src="./js/login.js"></script>
+
 </body>
 </html>

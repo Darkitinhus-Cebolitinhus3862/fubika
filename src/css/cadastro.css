@@ -1,0 +1,45 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input, select, button, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.cadbuton {
+    width: auto;
+    padding: 10px 20px;
+}
+.horizontal-line {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+.row {
+    display: flex;
+    gap: 10px;
+}
+.row .form-group {
+    flex: 1;
+}
+.radio-group {
+    display: ruby;
+    flex-direction: column;
+}
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.radio-option input {
+    margin-right: 10px;
+}

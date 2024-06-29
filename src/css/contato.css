@@ -48,7 +48,7 @@ body {
     box-sizing: border-box; /* Garantir que padding seja incluído na largura total */
 }
 
-button {
+.enviar {
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -126,17 +126,3 @@ close:hover, .close:focus {
 	border-radius: 4px; 
 	box-sizing: border-box; 
 } 
-
-.modal-content .login-button { 
-	background-color: #4CAF50; 
-	color: white; 
-	border: none; 
-	padding: 10px; 
-	width: 100%; 
-	border-radius: 4px; 
-	cursor: pointer; 
-} 
-
-.modal-content .login-button:hover {
-	background-color: #45a049; 
-}
