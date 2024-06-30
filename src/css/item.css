@@ -20,7 +20,13 @@ body {
 	align-items: center;
 	margin-top: 5%;
 	margin-bottom: 5%;
+	box-shadow: darkkhaki;
 }
+
+/* .container img{
+	border: 2px solid darkkhaki;
+	border-radius: 10px;
+} */
 
 #product-name {
     font-size: 32px;
