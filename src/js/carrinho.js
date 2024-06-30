@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const selectedPayment = document.querySelector('input[name="payment"]:checked');
             if (!selectedPayment) {
-                window.location.href = './carrinho.html';
+                alert(`Insira um modo de pagamento!`);
                 return;
             }
 
