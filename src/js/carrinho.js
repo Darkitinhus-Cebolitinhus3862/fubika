@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>R$ ${product.price.toFixed(2)}</strong></p>
                 <button class="btn" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</button>
             `;
-            if (index < 6 && index < 11) {
+            if (index < 6) {
                 productsElement.appendChild(productDiv);
-            } else if (index > 11) {
-                products3Element.appendChild(productDiv);
-            } else {
+            } else if (index < 12) {
                 products6Element.appendChild(productDiv);
+            } else {
+                products3Element.appendChild(productDiv);
             }
         });
     }
@@ -59,8 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
                 <td>${item.name}</td>
                 <td>R$ ${item.price.toFixed(2)}</td>
-                <td><input type="number" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input"></td>
+                <td>
+                    <button class="btn" id="a" onclick="decreaseQuantity(${index})">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="btn" id="a" onclick="increaseQuantity(${index})">+</button>
+                </td>
                 <td>R$ ${(item.price * item.quantity).toFixed(2)}</td>
+                <td><button class="btn" id="lixo" onclick="removeFromCart(${index})">🗑️</button></td>
             `;
 
             cartItemsElement.appendChild(row);
@@ -81,6 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCartItems();
         saveCart();
         alert(`${name} adicionado ao carrinho!`);
+    };
+
+    window.increaseQuantity = function(index) {
+        cart[index].quantity++;
+        renderCartItems();
+        saveCart();
+    };
+
+    window.decreaseQuantity = function(index) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        } else {
+            cart.splice(index, 1);
+        }
+        renderCartItems();
+        saveCart();
+    };
+
+    window.removeFromCart = function(index) {
+        cart.splice(index, 1);
+        renderCartItems();
+        saveCart();
     };
 
     function saveCart() {
