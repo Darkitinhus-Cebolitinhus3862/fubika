@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </td>
                 <td>R$ ${(item.price * item.quantity).toFixed(2)}</td>
                 <td><button class="btn" id="lixo" onclick="removeFromCart(${index})">🗑️</button></td>
-            `;
+                `;
 
             cartItemsElement.appendChild(row);
         });
