@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Aparador para Bordas de gramado', desc: 'Apara apara apara', price: 60.00, img: 'https://i.pinimg.com/236x/50/50/2d/50502df5c3c3ceb8769bfce3f6b79290.jpg' },
         { name: 'Mini Serra Elétrica 24v', desc: 'Corta', price: 260.00, img: 'https://i.pinimg.com/236x/48/4a/af/484aaf4c202a5a3a8200d2d05d5c923b.jpg' },
         { name: 'Sacho Coração e Sacho Garfo', desc: 'Arrasta', price: 65.50, img: 'https://i.pinimg.com/236x/f3/68/6d/f3686d914fb884ac3ab1d115268ae533.jpg' },
-        { name: 'Abridor de buracos', desc: 'Fura?', price: 20.00, img: 'https://i.pinimg.com/236x/85/2a/bb/852abb11da33641bad0f167d20868450.jpg' },
+        { name: 'Abridor de buracos na terra', desc: 'Abre buracos', price: 20.00, img: 'https://i.pinimg.com/236x/85/2a/bb/852abb11da33641bad0f167d20868450.jpg' },
         { name: 'Cortador de Grama', desc: 'Corta grama muito bem', price: 160.85, img: 'https://i.pinimg.com/236x/e5/65/6b/e5656b9818d4ebaa0337703e60a19147.jpg' },
         { name: 'Enxada', desc: 'Cavuca muito ela', price: 54.90, img: 'https://i.pinimg.com/236x/26/f8/6e/26f86e6b7febab93592ec442ffa3f59d.jpg' },
         { name: 'Ancinho', desc: 'Parece um garfo neh', price: 47.50, img: 'https://i.pinimg.com/236x/21/34/0d/21340d3947622de6edbc8d8d2c5d8609.jpg' },
@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
 
     function renderCartItems() {
         if (!cartItemsElement) {
@@ -97,8 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
                 <td>${item.name}</td>
                 <td>R$ ${item.price.toFixed(2)}</td>
-                <td><input type="number" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input"></td>
+                <td>
+                    <button class="btn" id="a" onclick="decreaseQuantity(${index})">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="btn" id="a" onclick="increaseQuantity(${index})">+</button>
+                </td>
                 <td>R$ ${(item.price * item.quantity).toFixed(2)}</td>
+                <td><button class="btn" id="lixo" onclick="removeFromCart(${index})">🗑️</button></td>
             `;
 
             cartItemsElement.appendChild(row);
@@ -121,26 +125,30 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`${name} adicionado ao carrinho!`);
     };
 
+    window.increaseQuantity = function(index) {
+        cart[index].quantity++;
+        renderCartItems();
+        saveCart();
+    };
+
+    window.decreaseQuantity = function(index) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        } else {
+            cart.splice(index, 1);
+        }
+        renderCartItems();
+        saveCart();
+    };
+
+    window.removeFromCart = function(index) {
+        cart.splice(index, 1);
+        renderCartItems();
+        saveCart();
+    };
+
     function saveCart() {
         sessionStorage.setItem('cart', JSON.stringify(cart));
-    }
-
-    if (cartItemsElement) {
-        cartItemsElement.addEventListener('input', (event) => {
-            if (event.target.classList.contains('quantity-input')) {
-                const index = event.target.dataset.index;
-                const quantity = parseInt(event.target.value);
-
-                if (quantity > 0) {
-                    cart[index].quantity = quantity;
-                } else {
-                    cart.splice(index, 1);
-                }
-
-                renderCartItems();
-                saveCart();
-            }
-        });
     }
 
     if (checkoutButton) {
@@ -152,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const selectedPayment = document.querySelector('input[name="payment"]:checked');
             if (!selectedPayment) {
-                window.location.href = './carrinho.html';
+                alert(`Insira um modo de pagamento!`);
                 return;
             }
 
