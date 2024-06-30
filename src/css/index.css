@@ -52,34 +52,39 @@ color: #527536;
   justify-content: space-around;
 }
 
-.product {   
-  position: relative;
-  display: flex;
-  justify-content: center;
+.product {
+display: flex;
   flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-clip: border-box;
+  align-items: center;
+  width: 20%;
   border: 2px solid black;
   border-radius: 5px;
-  width: 20%;
-  margin-bottom: 16px;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-bottom: 30px; 
+  margin-right: 10px;
   text-align: center;
-  padding: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.product a {
+  text-decoration: none;
+  color: white;
+}
+
+.product img {
+  max-width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 5px;
 }
 
 .product:hover {
   transform: scale(1.05);
 }
 
-.product img {
-  border-radius: 5px;
-  max-width: 100%;
-  height: auto;
+.product .btn {
+margin: 5px 0;
+width: 80%;
 }
 
 .slideshow-container {

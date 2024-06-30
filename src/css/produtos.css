@@ -23,7 +23,10 @@ body {
 }
 
 .product {
-    width: 30%;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
     border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 30px; 
@@ -48,6 +51,11 @@ body {
 .product:hover {
     transform: scale(1.05);
 }
+
+.product .btn {
+	margin: 5px 0;
+	width: 80%;
+  }
 
 .pagination {
     text-align: center;

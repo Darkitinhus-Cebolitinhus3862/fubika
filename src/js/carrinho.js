@@ -32,19 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
             productDiv.innerHTML = `
                 <h3>${product.name}</h3>
                 <img src="${product.img}" alt="${product.name}">
-                <p>${product.desc}</p>
                 <p><strong>R$ ${product.price.toFixed(2)}</strong></p>
+                <button class="btn" onclick="">Detalhes</button>
                 <button class="btn" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</button>
             `;
             if (index < 6) {
                 productsElement.appendChild(productDiv);
-            } else if (index < 12) {
+            } else if (index < 11) {
                 products6Element.appendChild(productDiv);
             } else {
                 products3Element.appendChild(productDiv);
             }
         });
     }
+    
 
     function renderCartItems() {
         if (!cartItemsElement) {
@@ -59,14 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
                 <td>${item.name}</td>
                 <td>R$ ${item.price.toFixed(2)}</td>
-                <td>
-                    <button class="btn" id="a" onclick="decreaseQuantity(${index})">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="btn" id="a" onclick="increaseQuantity(${index})">+</button>
-                </td>
+                <td><input type="number" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input"></td>
                 <td>R$ ${(item.price * item.quantity).toFixed(2)}</td>
-                <td><button class="btn" id="lixo" onclick="removeFromCart(${index})">🗑️</button></td>
-                `;
+            `;
 
             cartItemsElement.appendChild(row);
         });
@@ -86,28 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCartItems();
         saveCart();
         alert(`${name} adicionado ao carrinho!`);
-    };
-
-    window.increaseQuantity = function(index) {
-        cart[index].quantity++;
-        renderCartItems();
-        saveCart();
-    };
-
-    window.decreaseQuantity = function(index) {
-        if (cart[index].quantity > 1) {
-            cart[index].quantity--;
-        } else {
-            cart.splice(index, 1);
-        }
-        renderCartItems();
-        saveCart();
-    };
-
-    window.removeFromCart = function(index) {
-        cart.splice(index, 1);
-        renderCartItems();
-        saveCart();
     };
 
     function saveCart() {
@@ -141,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const selectedPayment = document.querySelector('input[name="payment"]:checked');
             if (!selectedPayment) {
-                alert(`Insira um modo de pagamento!`);
+                window.location.href = './carrinho.html';
                 return;
             }
 
